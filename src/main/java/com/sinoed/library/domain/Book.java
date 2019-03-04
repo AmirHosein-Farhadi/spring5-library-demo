@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -18,10 +20,30 @@ public class Book {
 
     private String publisher;
 
+    private Set<Author> authors = new HashSet<>();
+
+    public Book() {
+    }
+
+    public Book(String name, String libraryName, String publisher, Set<Author> authors) {
+        this.name = name;
+        this.libraryName = libraryName;
+        this.publisher = publisher;
+        this.authors = authors;
+    }
+
     public Book(String name, String libraryName, String publisher) {
         this.name = name;
         this.libraryName = libraryName;
         this.publisher = publisher;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 
     public void setName(String name) {
