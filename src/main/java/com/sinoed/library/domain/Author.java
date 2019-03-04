@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Author {
+
     private Long id;
 
     private String name;
@@ -11,6 +12,14 @@ public class Author {
     private String lastName;
 
     private Set<Book> books = new HashSet<>();
+
+    public Author() {
+    }
+
+    public Author(String name, String lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
 
     public Author(String name, String lastName, Set<Book> books) {
         this.name = name;
