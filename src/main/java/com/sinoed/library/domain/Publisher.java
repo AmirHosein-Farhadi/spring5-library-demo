@@ -20,6 +20,6 @@ public class Publisher {
     private String name;
     private LocalDate dateOfEstablishment;
 
-    @OneToMany
+    @OneToMany(mappedBy = "publisher")
     private Set<Book> books = new HashSet<>();
 }
