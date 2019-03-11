@@ -18,7 +18,8 @@ public class Book {
 
     private String libraryName;
 
-    private String publisher;
+    @ManyToOne
+    private Publisher publisher;
 
     @ManyToMany
     private Set<Author> authors = new HashSet<>();
